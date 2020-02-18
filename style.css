@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+}
+
+.wrapper {
+  position: relative;
+  width: 502px;
+  margin: 50px auto;
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+.wrapper #draggable {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  padding: 1em;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: yellowgreen;
+}
+
+.wrapper #draggable p {
+  font-size: 15px;
+}
+
+.wrapper .square {
+  background-color: #b9f6ca;
+  height: 100px;
+  width: 100px;
+  border: 1px solid whitesmoke;
+  float: left;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/*# sourceMappingURL=style.css.map */

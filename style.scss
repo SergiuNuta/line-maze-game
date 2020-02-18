@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+}
+
+.wrapper {
+    position: relative;
+    width: 502px;
+    margin: 50px auto;
+    border: 1px solid black;
+    overflow: hidden;
+    
+#draggable {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    padding: 1em;
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: yellowgreen;
+
+    p {
+        font-size: 15px;
+    }
+}
+
+.square {
+    background-color: #b9f6ca;
+    height: 100px;
+    width: 100px;
+    border: 1px solid whitesmoke;
+    float: left;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+}
