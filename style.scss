@@ -46,14 +46,11 @@ header h1 {
     }
 }
 
-// @keyframes kameha {
-//     0%   {background-color: yellowgreen;}
-//   25%  {background-color: yellow;}
-//   50%  {background-color: gainsboro;}
-//   100% {background-color: white;}
-//   }
+.goku, .badGuy {
+    width: 80px;
+    object-fit: contain;
 
-/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+}
   
   @keyframes kameha {
     from {

@@ -23,7 +23,6 @@ header h1 {
   margin: 50px auto;
   border: 1px solid black;
   overflow: hidden;
-  /* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
 }
 
 .wrapper #draggable {
@@ -50,6 +49,12 @@ header h1 {
 .wrapper #draggable p {
   font-size: 11px;
   color: black;
+}
+
+.wrapper .goku, .wrapper .badGuy {
+  width: 80px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 @-webkit-keyframes kameha {
