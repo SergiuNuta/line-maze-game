@@ -23,24 +23,63 @@ header h1 {
   margin: 50px auto;
   border: 1px solid black;
   overflow: hidden;
+  /* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
 }
 
 .wrapper #draggable {
   position: absolute;
-  top: 2%;
-  left: 2%;
+  top: 7%;
+  left: 3%;
   cursor: pointer;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   padding: 1em;
   border-radius: 50%;
   background-color: yellowgreen;
   text-align: center;
+  -webkit-animation-name: kameha;
+          animation-name: kameha;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
 }
 
 .wrapper #draggable p {
-  font-size: 15px;
+  font-size: 11px;
   color: black;
+}
+
+@-webkit-keyframes kameha {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes kameha {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
 }
 
 .wrapper .square {
@@ -54,7 +93,7 @@ header h1 {
           box-sizing: border-box;
 }
 
-.wrapper .square:hover {
-  background: #F39814;
+.wrapper .highlighter {
+  background-color: #F7FE2E;
 }
 /*# sourceMappingURL=style.css.map */

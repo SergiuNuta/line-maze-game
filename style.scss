@@ -25,21 +25,54 @@ header h1 {
     
 #draggable {
     position: absolute;
-    top: 2%;
-    left: 2%;
+    top: 7%;
+    left: 3%;
     cursor: pointer;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     padding: 1em;
     border-radius: 50%;
     background-color: yellowgreen;
     text-align: center;
+    animation-name: kameha;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    
 
     p {
-        font-size: 15px;
+        font-size: 11px;
         color: black;
     }
 }
+
+// @keyframes kameha {
+//     0%   {background-color: yellowgreen;}
+//   25%  {background-color: yellow;}
+//   50%  {background-color: gainsboro;}
+//   100% {background-color: white;}
+//   }
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+  
+  @keyframes kameha {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  
+    50% {
+      -webkit-transform: scale3d(1.2, 1.2, 1.2);
+      transform: scale3d(1.2, 1.2, 1.2);
+    }
+  
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+
 
 .square {
     background-color: #b9f6ca;
@@ -49,10 +82,10 @@ header h1 {
     float: left;
     text-align: center;
     box-sizing: border-box;
-
-    &:hover {
-        background: #F39814;
-    }
 }
 
+
+.highlighter { 
+    background-color:#F7FE2E;
+}
 }
