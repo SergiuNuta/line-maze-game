@@ -2,40 +2,40 @@ window.onload = () => {
 
     let $firstSquare = $("#sq0");
     let $lastSquare = $("#sq19");
+    let $squares = $(".square");
 
-    $firstSquare.css('background-image', "url('https://i.imgur.com/VAOJm51.png')");
-    $firstSquare.css('background-size', "cover");
-    $lastSquare.css('background-image', "url('https://i.imgur.com/2UFPiQG.png')"); 
+    $firstSquare.prepend($('<img>',{class: 'goku', src: 'https://i.imgur.com/VAOJm51.png', style: 'image-size="cover"'}));
+    // $firstSquare.css('background-image', "url('https://i.imgur.com/VAOJm51.png')").addClass("goku");
+    // $firstSquare.css('background-size', "cover");
+    $lastSquare.prepend($('<img>', {clss: 'badGuy', src: 'https://i.imgur.com/2UFPiQG.png'}));
+    // $lastSquare.css('background-image', "url('https://i.imgur.com/2UFPiQG.png')").addClass("badGuy"); 
+    // $lastSquare.css('background-size', "cover");
     // && 'display', "none"
-    $lastSquare.css('background-size', "cover");
-
 
     let movesMade = 0;
 
-   
-    
     $(function() {
         $( "#draggable" ).draggable({ containment: "#containment-wrapper", scroll: false, axis: "y,x", revert: true});
         $("#draggable").selectable();
       });
 
-      
-
     $(".square").droppable({
             accept: '#draggable',
-            over: (function() {
-               $(this).addClass('highlighter');
-               $(this).css('display', "auto");
+            over: (function(event, ui) {
+                console.log($(event.target).index());
+               $(this).addClass('highlighter').index();
+               $( ".badGuy" ).toggle( "bounce", { times: 3 }, "slow" );
                movesMade++;
+               console.log(movesMade);
             })   
         });
 
 
         const checkRightPath = () => {
             if (movesMade > 7) {
-                let moves = Array.prototype.slice.call($(".square"));
+                let moves = [...$(".square")];
                 let results = moves.map(function (square) {
-                    return square.innerHTML;
+                    return square.index();
                 });
     
                 const kamehaPath = [
@@ -56,15 +56,17 @@ window.onload = () => {
                 ];
     
                 return kamehaPath.find((combo) => {
-                    if (results[combo[0]] !== "" && results[combo[0]] === results[combo[1]] 
+                    if (results[combo[1]] !== "" 
+                    && results[combo[0]] === results[combo[1]] 
                     && results[combo[1]] === results[combo[2]] 
                     && results[combo[2]] === results[combo[3]] 
                     && results[combo[3]] === results[combo[4]]
                     && results[combo[4]] === results[combo[5]] 
                     && results[combo[5]] === results[combo[6]]
                     && results[combo[6]] === results[combo[7]]) {
-                        return true;
-                        console.log(results);
+                        console.log("combo works");
+                        // return true;
+                        
                     } else {
                         return false;
                     }
