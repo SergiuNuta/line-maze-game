@@ -39,27 +39,64 @@ window.onload = () => {
         });
         console.log(results);
 
-        const kamehaPath = [
-            "sq0", "sq1", "sq2", "sq3", "sq4", "sq9", "sq14", "sq19"
+    //     const kamehaPath = [
+    //         "sq0",
+    //         "sq1",
+    //         "sq2",
+    //         "sq3",
+    //         "sq4",
+    //         "sq9",
+    //         "sq14",
+    //         "sq19"
 
-        ];
+    //     ];
 
-        if ((results[0] === kamehaPath[0]) &&
-            (results[1] === kamehaPath[1]) &&
-            (results[2] === kamehaPath[2]) &&
-            (results[3] === kamehaPath[3]) &&
-            (results[4] === kamehaPath[4]) &&
-            (results[5] === kamehaPath[5]) &&
-            (results[6] === kamehaPath[6]) &&
-            (results[7] === kamehaPath[7])) {
-            console.log("combo works");
+    //     if ((results[0] === kamehaPath[0]) &&
+    //         (results[1] === kamehaPath[1]) &&
+    //         (results[2] === kamehaPath[2]) &&
+    //         (results[3] === kamehaPath[3]) &&
+    //         (results[4] === kamehaPath[4]) &&
+    //         (results[5] === kamehaPath[5]) &&
+    //         (results[6] === kamehaPath[6]) &&
+    //         (results[7] === kamehaPath[7])) {
+    //         console.log("combo works");
+    //         return true;
+    //     } else {
+    //         console.log("combo is not working");
+    //         return false;
+
+    //     }
+    // }
+
+
+
+    const kamehaPath = [ 
+        "sq0, sq1, sq2, sq3, sq4, sq9, sq14, sq19",
+    ];
+    return kamehaPath.find((combo) => {
+    if (
+     (combo[0] === results[0]) &&
+     (combo[1] === results[1]) &&
+     (combo[2] === results[2]) &&
+     (combo[3] === results[3]) &&
+     (combo[4] === results[4]) &&
+     (combo[5] === results[5]) &&
+     (combo[6] === results[6]) &&
+     (combo[7] === results[7]) 
+       ) {
+        console.log("combo works");
             return true;
-        } else {
-            console.log("combo is not working");
-            return false;
+    } else {
+        console.log("combo is not working");
+        return false;
 
-        }
     }
+});
+    }
+
+
+
+
 
 
 
