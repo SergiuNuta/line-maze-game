@@ -34,7 +34,7 @@ header h1 {
   height: 60px;
   padding: 1em;
   border-radius: 50%;
-  background-color: yellowgreen;
+  background-color: #f0845d;
   text-align: center;
   -webkit-animation-name: kameha;
           animation-name: kameha;

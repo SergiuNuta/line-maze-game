@@ -2,7 +2,7 @@ window.onload = () => {
 
     let $firstSquare = $("#sq0");
     let $lastSquare = $("#sq19");
-    // let $squares = $(".square");
+    let $squares = $(".square");
 
     $firstSquare.append($('<img>', { class: 'goku', src: 'https://i.imgur.com/VAOJm51.png' }));
     $lastSquare.append($('<img>', { class: 'badGuy', src: 'https://i.imgur.com/2UFPiQG.png' }));
@@ -19,10 +19,10 @@ window.onload = () => {
             accept: '#draggable',
             over: (function (event, ui) {
                 console.log($(event.target).index());
-                $(this).addClass('highlighter').index();
+                $(this).addClass('highlighter');
                 if (movesMade == 7) {
                     checkRightPath();
-                    $(".badGuy").toggle("bounce", { times: 3 }, "slow"); // tooggle to refactor
+                    $(".badGuy").toggle("bounce", { times: 3 }, "slow");
                 }
                 movesMade++;
                 console.log(movesMade);
@@ -33,33 +33,26 @@ window.onload = () => {
 
     const checkRightPath = () => {
         let moves = [...$(".highlighter")];
-        console.log(moves);
         let results = moves.map(function (square) {
-            return square.id;
+            return $squares.index(square);
         });
         console.log(results);
 
         const kamehaPath = [
-            // "0, 1, 2, 3, 4, 9, 14, 19"
-            "sq0",
-            "sq1",
-            "sq2",
-            "sq3",
-            "sq4",
-            "sq9",
-            "sq14",
-            "sq19"
+            [0, 1, 2, 3, 4, 9, 14, 19],
+            [0, 5, 10, 15, 16, 17, 18, 19]
 
         ];
+        for(let i = 0; i < kamehaPath.length; i++) {
 
-        if ((results[0] === kamehaPath[0]) &&
-            (results[1] === kamehaPath[1]) &&
-            (results[2] === kamehaPath[2]) &&
-            (results[3] === kamehaPath[3]) &&
-            (results[4] === kamehaPath[4]) &&
-            (results[5] === kamehaPath[5]) &&
-            (results[6] === kamehaPath[6]) &&
-            (results[7] === kamehaPath[7])) {
+        if ((results[0] === kamehaPath[i][0]) &&
+            (results[1] === kamehaPath[i][1]) &&
+            (results[2] === kamehaPath[i][2]) &&
+            (results[3] === kamehaPath[i][3]) &&
+            (results[4] === kamehaPath[i][4]) &&
+            (results[5] === kamehaPath[i][5]) &&
+            (results[6] === kamehaPath[i][6]) &&
+            (results[7] === kamehaPath[i][7])) {
             console.log("combo works");
             return true;
         } else {
@@ -68,22 +61,26 @@ window.onload = () => {
 
         }
     }
+}
+
+
+
 
 
 
 //     const kamehaPath = [ 
-//         "0, 1, 2, 3, 4, 9, 14, 19"
+//         [0, 1, 2, 3, 4, 9, 14, 19],
+//         [0, 5, 10, 15, 16, 17, 18, 19]
 //     ];
 //     return kamehaPath.find((combo) => {
 //     if (
-//      (combo[0] === results[0]) &&
-//      (combo[1] === results[1]) &&
-//      (combo[2] === results[2]) &&
-//      (combo[3] === results[3]) &&
-//      (combo[4] === results[4]) &&
-//      (combo[5] === results[5]) &&
-//      (combo[6] === results[6]) &&
-//      (combo[7] === results[7]) 
+//      (results[combo[0]] === results[combo[1]]) &&
+//      (results[combo[1]] === results[combo[2]]) &&
+//      (results[combo[2]] === results[combo[3]]) &&
+//      (results[combo[3]] === results[combo[4]]) &&
+//      (results[combo[4]] === results[combo[5]]) &&
+//      (results[combo[5]] === results[combo[6]]) &&
+//      (results[combo[6]] === results[combo[7]]) 
 //        ) {
 //         console.log("combo works");
 //             return true;
