@@ -2,13 +2,10 @@ window.onload = () => {
 
     let $firstSquare = $("#sq0");
     let $lastSquare = $("#sq19");
-    let $squares = $(".square");
-    
- 
+    // let $squares = $(".square");
 
     $firstSquare.append($('<img>', { class: 'goku', src: 'https://i.imgur.com/VAOJm51.png' }));
-    $lastSquare.append($('<img>', { class: 'badGuy', src: 'https://i.imgur.com/2UFPiQG.png'}));
-
+    $lastSquare.append($('<img>', { class: 'badGuy', src: 'https://i.imgur.com/2UFPiQG.png' }));
 
     let movesMade = 0;
 
@@ -17,64 +14,53 @@ window.onload = () => {
         $("#draggable").selectable();
     });
 
-    $(".square").droppable({
-        accept: '#draggable',
-        over: (function (event, ui) {
-            console.log($(event.target).index());
-            $(this).addClass('highlighter').index();
-            if (movesMade == 7) {
-                $(".badGuy").toggle("bounce", { times: 3 }, "slow"); // tooggle to refactor
-            }
-
-            movesMade++;
-            console.log(movesMade);
-        })
-    });
-
+    const startGame = () => {
+        $(".square").droppable({
+            accept: '#draggable',
+            over: (function (event, ui) {
+                console.log($(event.target).index());
+                $(this).addClass('highlighter').index();
+                if (movesMade == 7) {
+                    checkRightPath();
+                    $(".badGuy").toggle("bounce", { times: 3 }, "slow"); // tooggle to refactor
+                }
+                movesMade++;
+                console.log(movesMade);
+            })
+        });
+    }
+    startGame();
 
     const checkRightPath = () => {
-        if (movesMade > 7) {
-            let moves = [...$(".square")];
-            let results = moves.map(function (square) {
-                return square.index();
-            });
+        let moves = [...$(".highlighter")];
+        // console.log(moves);
+        let results = moves.map(function (square) {
+            return square.id;
+        });
+        console.log(results);
 
-            const kamehaPath = [
-                "0, 1, 2, 3, 4, 9, 14, 19",
-                "0, 5, 10, 15, 16, 17, 18, 19",
-                "0, 1, 6, 11, 16, 17, 18, 19",
-                "0, 5, 6, 11, 16, 17, 18, 19",
-                "0, 5, 10, 11, 16, 17, 18, 19",
-                "0, 1, 2, 7, 12, 17, 18, 19",
-                "0, 1, 6, 7, 12, 17, 18, 19",
-                "0, 1, 6, 11, 12, 17 18, 19",
-                "0, 1, 2, 3, 8, 13, 18, 19",
-                "0, 1, 2, 7, 8, 13, 18, 19",
-                "0, 1, 2, 7, 12, 13, 18, 19",
-                "0, 1, 2, 3, 4, 9, 14, 19",
-                "0, 1, 2, 3, 8, 9, 14, 19",
-                "0, 1, 2, 3, 8, 13, 14, 19"
-            ];
+        const kamehaPath = [
+            "sq0", "sq1", "sq2", "sq3", "sq4", "sq9", "sq14", "sq19"
 
-            return kamehaPath.find((combo) => {
-                if (results[combo[1]] !== ""
-                    && results[combo[0]] === results[combo[1]]
-                    && results[combo[1]] === results[combo[2]]
-                    && results[combo[2]] === results[combo[3]]
-                    && results[combo[3]] === results[combo[4]]
-                    && results[combo[4]] === results[combo[5]]
-                    && results[combo[5]] === results[combo[6]]
-                    && results[combo[6]] === results[combo[7]]) {
-                    console.log("combo works");
-                    return true;
+        ];
 
-                } else {
-                    return false;
-                    console.log("combo is not working");
-                }
-            });
+        if ((results[0] === kamehaPath[0]) &&
+            (results[1] === kamehaPath[1]) &&
+            (results[2] === kamehaPath[2]) &&
+            (results[3] === kamehaPath[3]) &&
+            (results[4] === kamehaPath[4]) &&
+            (results[5] === kamehaPath[5]) &&
+            (results[6] === kamehaPath[6]) &&
+            (results[7] === kamehaPath[7])) {
+            console.log("combo works");
+            return true;
+        } else {
+            console.log("combo is not working");
+            return false;
+
         }
     }
+
 
 
 
