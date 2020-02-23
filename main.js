@@ -57,7 +57,6 @@ window.onload = () => {
                 return true;
             }
         }
-
         console.log("combo is not working");
         return false;
     }
