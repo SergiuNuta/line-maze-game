@@ -41,25 +41,25 @@ window.onload = () => {
         const kamehaPath = [
             [0, 1, 2, 3, 4, 9, 14, 19],
             [0, 5, 10, 15, 16, 17, 18, 19]
-
         ];
-        for(let i = 0; i < kamehaPath.length; i++) {
 
-        if ((results[0] === kamehaPath[i][0]) &&
-            (results[1] === kamehaPath[i][1]) &&
-            (results[2] === kamehaPath[i][2]) &&
-            (results[3] === kamehaPath[i][3]) &&
-            (results[4] === kamehaPath[i][4]) &&
-            (results[5] === kamehaPath[i][5]) &&
-            (results[6] === kamehaPath[i][6]) &&
-            (results[7] === kamehaPath[i][7])) {
-            console.log("combo works");
-            return true;
-        } else {
-            console.log("combo is not working");
-            return false;
+        for (let i = 0; i < kamehaPath.length; i++) {
 
+            if ((results[0] === kamehaPath[i][0]) &&
+                (results[1] === kamehaPath[i][1]) &&
+                (results[2] === kamehaPath[i][2]) &&
+                (results[3] === kamehaPath[i][3]) &&
+                (results[4] === kamehaPath[i][4]) &&
+                (results[5] === kamehaPath[i][5]) &&
+                (results[6] === kamehaPath[i][6]) &&
+                (results[7] === kamehaPath[i][7])) {
+                console.log("combo works");
+                return true;
+            }
         }
+
+        console.log("combo is not working");
+        return false;
     }
 }
 
@@ -68,29 +68,29 @@ window.onload = () => {
 
 
 
-//     const kamehaPath = [ 
-//         [0, 1, 2, 3, 4, 9, 14, 19],
-//         [0, 5, 10, 15, 16, 17, 18, 19]
-//     ];
-//     return kamehaPath.find((combo) => {
-//     if (
-//      (results[combo[0]] === results[combo[1]]) &&
-//      (results[combo[1]] === results[combo[2]]) &&
-//      (results[combo[2]] === results[combo[3]]) &&
-//      (results[combo[3]] === results[combo[4]]) &&
-//      (results[combo[4]] === results[combo[5]]) &&
-//      (results[combo[5]] === results[combo[6]]) &&
-//      (results[combo[6]] === results[combo[7]]) 
-//        ) {
-//         console.log("combo works");
-//             return true;
-//     } else {
-//         console.log("combo is not working");
-//         return false;
+    //     const kamehaPath = [ 
+    //         [0, 1, 2, 3, 4, 9, 14, 19],
+    //         [0, 5, 10, 15, 16, 17, 18, 19]
+    //     ];
+    //     return kamehaPath.find((combo) => {
+    //     if (
+    //      (results[combo[0]] === results[combo[1]]) &&
+    //      (results[combo[1]] === results[combo[2]]) &&
+    //      (results[combo[2]] === results[combo[3]]) &&
+    //      (results[combo[3]] === results[combo[4]]) &&
+    //      (results[combo[4]] === results[combo[5]]) &&
+    //      (results[combo[5]] === results[combo[6]]) &&
+    //      (results[combo[6]] === results[combo[7]]) 
+    //        ) {
+    //         console.log("combo works");
+    //             return true;
+    //     } else {
+    //         console.log("combo is not working");
+    //         return false;
 
-//     }
-// });
-//     }
+    //     }
+    // });
+    //     }
 
 
 
@@ -152,4 +152,4 @@ window.onload = () => {
 
 
 
-}
+// }

@@ -32,7 +32,9 @@ header h1 {
     height: 60px;
     padding: 1em;
     border-radius: 50%;
-    background-color: rgb(240, 132, 93);
+    background-image: url(https://media.giphy.com/media/4GDliBrmcmuFa/giphy.gif);
+    // background-color: rgb(240, 132, 93);
+    background-size: cover;
     text-align: center;
     animation-name: kameha;
     animation-duration: 3s;
@@ -54,17 +56,14 @@ header h1 {
   
   @keyframes kameha {
     from {
-      -webkit-transform: scale3d(1, 1, 1);
       transform: scale3d(1, 1, 1);
     }
   
     50% {
-      -webkit-transform: scale3d(1.2, 1.2, 1.2);
       transform: scale3d(1.2, 1.2, 1.2);
     }
   
     to {
-      -webkit-transform: scale3d(1, 1, 1);
       transform: scale3d(1, 1, 1);
     }
   }
@@ -83,6 +82,11 @@ header h1 {
 
 
 .highlighter { 
+    // background-image: url(https://media.giphy.com/media/lhDv3q1sW9ruU/giphy.gif);
+    // background-size: contain;
     background-color:#F7FE2E;
+//     transform: rotate(90deg);
+//     background-repeat: no-repeat;
+//     z-index: -10;
 }
 }
