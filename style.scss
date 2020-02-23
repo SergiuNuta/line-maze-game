@@ -17,13 +17,24 @@ header h1 {
 
 .container {
     margin: 20px auto;
-}
+
 
 .rules {
     text-align: center;
     margin: 50px;
     float: left;
     width: 300px;
+
+  
+.ball-lives h2 {
+    float: left;
+    margin: 0 60px 0 0;
+}
+    .ball-lives img {
+        width: 25px;
+        float: left;
+        margin: 3px 5px;
+    }
     
     ul {
         margin: 30px 0;
@@ -37,6 +48,14 @@ header h1 {
 
     img {
         width: 150px;
+    }
+
+    .level h2 {
+        text-align: left;
+
+        #score {
+            margin: 0 60px;
+        }
     }
 }
 
@@ -67,7 +86,6 @@ header h1 {
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-    
 
     p {
         font-size: 11px;
@@ -83,15 +101,15 @@ header h1 {
   
   @keyframes kameha {
     from {
-      transform: scale3d(1.4, 1.4, 1.4);
+      transform: scale3d(1.6, 1.6, 1.6);
     }
   
     50% {
-      transform: scale3d(1.8, 1.8, 1.8);
+      transform: scale3d(2.5, 2.5, 2.5);
     }
   
     to {
-      transform: scale3d(1.4, 1.4, 1.4);
+      transform: scale3d(1.6, 1.6, 1.6);
     }
   }
   
@@ -117,4 +135,5 @@ header h1 {
 //     z-index: -10;
 }
 
+}
 }

@@ -12,10 +12,17 @@ window.onload = () => {
     let movesMade = 0;
 
     $(function () {
-        $("#draggable").draggable({ containment: "#containment-wrapper", scroll: false, axis: "y,x", revert: true });
+        $("#draggable").draggable({ containment: "#containment-wrapper", scroll: false, axis: "y,x", revert: true});
         $("#draggable").selectable();
     });
 
+    $(".energy").mouseenter(function() {
+        $("<audio></audio>").attr({
+            'src': './Dragon-Kamehameha-Sound-Effect.mp3',
+            'autoplay': 'autoplay'
+        }).appendTo(".energy");
+    });
+   
     const startGame = () => {
         $(".square").droppable({
             accept: '#draggable',
@@ -24,6 +31,7 @@ window.onload = () => {
                 $(this).addClass('highlighter');
                 if (movesMade == 7) {
                     checkRightPath();
+                    $('#draggable').css("display", "none");
                     $(".badGuy").toggle("bounce", { times: 3 }, "slow");
                 }
                 movesMade++;

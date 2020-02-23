@@ -20,28 +20,47 @@ header h1 {
   margin: 20px auto;
 }
 
-.rules {
+.container .rules {
   text-align: center;
   margin: 50px;
   float: left;
   width: 300px;
 }
 
-.rules ul {
+.container .rules .ball-lives h2 {
+  float: left;
+  margin: 0 60px 0 0;
+}
+
+.container .rules .ball-lives img {
+  width: 25px;
+  float: left;
+  margin: 3px 5px;
+}
+
+.container .rules ul {
   margin: 30px 0;
   text-align: left;
   list-style: none;
 }
 
-.rules ul li {
+.container .rules ul li {
   padding: 5px 0;
 }
 
-.rules img {
+.container .rules img {
   width: 150px;
 }
 
-.wrapper {
+.container .rules .level h2 {
+  text-align: left;
+}
+
+.container .rules .level h2 #score {
+  margin: 0 60px;
+}
+
+.container .wrapper {
   position: relative;
   display: block;
   width: 502px;
@@ -50,7 +69,7 @@ header h1 {
   overflow: hidden;
 }
 
-.wrapper #draggable {
+.container .wrapper #draggable {
   position: absolute;
   top: 7%;
   left: 3%;
@@ -72,12 +91,12 @@ header h1 {
           animation-timing-function: ease-in-out;
 }
 
-.wrapper #draggable p {
+.container .wrapper #draggable p {
   font-size: 11px;
   color: black;
 }
 
-.wrapper .goku, .wrapper .badGuy {
+.container .wrapper .goku, .container .wrapper .badGuy {
   width: 80px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -85,35 +104,35 @@ header h1 {
 
 @-webkit-keyframes kameha {
   from {
-    -webkit-transform: scale3d(1.4, 1.4, 1.4);
-            transform: scale3d(1.4, 1.4, 1.4);
+    -webkit-transform: scale3d(1.6, 1.6, 1.6);
+            transform: scale3d(1.6, 1.6, 1.6);
   }
   50% {
-    -webkit-transform: scale3d(1.8, 1.8, 1.8);
-            transform: scale3d(1.8, 1.8, 1.8);
+    -webkit-transform: scale3d(2.5, 2.5, 2.5);
+            transform: scale3d(2.5, 2.5, 2.5);
   }
   to {
-    -webkit-transform: scale3d(1.4, 1.4, 1.4);
-            transform: scale3d(1.4, 1.4, 1.4);
+    -webkit-transform: scale3d(1.6, 1.6, 1.6);
+            transform: scale3d(1.6, 1.6, 1.6);
   }
 }
 
 @keyframes kameha {
   from {
-    -webkit-transform: scale3d(1.4, 1.4, 1.4);
-            transform: scale3d(1.4, 1.4, 1.4);
+    -webkit-transform: scale3d(1.6, 1.6, 1.6);
+            transform: scale3d(1.6, 1.6, 1.6);
   }
   50% {
-    -webkit-transform: scale3d(1.8, 1.8, 1.8);
-            transform: scale3d(1.8, 1.8, 1.8);
+    -webkit-transform: scale3d(2.5, 2.5, 2.5);
+            transform: scale3d(2.5, 2.5, 2.5);
   }
   to {
-    -webkit-transform: scale3d(1.4, 1.4, 1.4);
-            transform: scale3d(1.4, 1.4, 1.4);
+    -webkit-transform: scale3d(1.6, 1.6, 1.6);
+            transform: scale3d(1.6, 1.6, 1.6);
   }
 }
 
-.wrapper .square {
+.container .wrapper .square {
   background-color: #b9f6ca;
   height: 100px;
   width: 100px;
@@ -124,7 +143,7 @@ header h1 {
           box-sizing: border-box;
 }
 
-.wrapper .highlighter {
+.container .wrapper .highlighter {
   background-color: #F7FE2E;
 }
 /*# sourceMappingURL=style.css.map */
