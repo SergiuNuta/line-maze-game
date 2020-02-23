@@ -28,12 +28,17 @@ header h1 {
 }
 
 .rules ul {
+  margin: 30px 0;
   text-align: left;
   list-style: none;
 }
 
 .rules ul li {
   padding: 5px 0;
+}
+
+.rules img {
+  width: 150px;
 }
 
 .wrapper {
@@ -54,7 +59,7 @@ header h1 {
   height: 60px;
   padding: 1em;
   border-radius: 50%;
-  background-image: url(https://media.giphy.com/media/4GDliBrmcmuFa/giphy.gif);
+  background-image: url(ball.png);
   background-size: cover;
   text-align: center;
   -webkit-animation-name: kameha;
@@ -74,37 +79,37 @@ header h1 {
 
 .wrapper .goku, .wrapper .badGuy {
   width: 80px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @-webkit-keyframes kameha {
   from {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
+    -webkit-transform: scale3d(1.4, 1.4, 1.4);
+            transform: scale3d(1.4, 1.4, 1.4);
   }
   50% {
-    -webkit-transform: scale3d(1.2, 1.2, 1.2);
-            transform: scale3d(1.2, 1.2, 1.2);
+    -webkit-transform: scale3d(1.8, 1.8, 1.8);
+            transform: scale3d(1.8, 1.8, 1.8);
   }
   to {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
+    -webkit-transform: scale3d(1.4, 1.4, 1.4);
+            transform: scale3d(1.4, 1.4, 1.4);
   }
 }
 
 @keyframes kameha {
   from {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
+    -webkit-transform: scale3d(1.4, 1.4, 1.4);
+            transform: scale3d(1.4, 1.4, 1.4);
   }
   50% {
-    -webkit-transform: scale3d(1.2, 1.2, 1.2);
-            transform: scale3d(1.2, 1.2, 1.2);
+    -webkit-transform: scale3d(1.8, 1.8, 1.8);
+            transform: scale3d(1.8, 1.8, 1.8);
   }
   to {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
+    -webkit-transform: scale3d(1.4, 1.4, 1.4);
+            transform: scale3d(1.4, 1.4, 1.4);
   }
 }
 

@@ -3,9 +3,11 @@ window.onload = () => {
     let $firstSquare = $("#sq0");
     let $lastSquare = $("#sq19");
     let $squares = $(".square");
+    let $audioF = $("#energy");
 
     $firstSquare.append($('<img>', { class: 'goku', src: 'https://i.imgur.com/VAOJm51.png' }));
-    $lastSquare.append($('<img>', { class: 'badGuy', src: 'https://i.imgur.com/2UFPiQG.png' }));
+    $lastSquare.append($('<img>', { class: 'badGuy', src: './majinbu.png' }));
+    // $lastSquare.append($('<img>', { class: 'badGuy', src: 'https://i.imgur.com/2UFPiQG.png' }));
 
     let movesMade = 0;
 
