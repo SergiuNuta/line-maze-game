@@ -5,7 +5,7 @@ window.onload = () => {
     let $squares = $(".square");
     let $audioF = $("#energy");
 
-    $firstSquare.append($('<img>', { class: 'goku', src: 'https://i.imgur.com/VAOJm51.png' }));
+    $firstSquare.append($('<img>', { class: 'goku energy', src: 'https://i.imgur.com/VAOJm51.png' }));
     $lastSquare.append($('<img>', { class: 'badGuy', src: './majinbu.png' }));
     // $lastSquare.append($('<img>', { class: 'badGuy', src: 'https://i.imgur.com/2UFPiQG.png' }));
 
@@ -16,11 +16,12 @@ window.onload = () => {
         $("#draggable").selectable();
     });
 
-    $(".energy").mouseenter(function() {
+    $(".energy").hover(function() {
         $("<audio></audio>").attr({
-            'src': './Dragon-Kamehameha-Sound-Effect.mp3',
-            'autoplay': 'autoplay'
-        }).appendTo(".energy");
+            'src': './Dragon-Sound-Effect2.mp3',
+            'autoplay': 'autoplay',
+            'loop': 'false'
+        });
     });
    
     const startGame = () => {
