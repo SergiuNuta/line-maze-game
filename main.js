@@ -12,7 +12,7 @@ window.onload = () => {
     let movesMade = 0;
 
     $(function () {
-        $("#draggable").draggable({ containment: "#containment-wrapper", scroll: false, axis: "y,x", revert: true});
+        $("#draggable").draggable({ containment: "#containment-wrapper", scroll: false, axis: "y,x"});
         $("#draggable").selectable();
     });
 
